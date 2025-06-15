@@ -227,16 +227,6 @@ As part of this technical test for a Frontend Developer position, you are expect
    Describe the process you used to identify the bug, how it impacted the data visualization, and how you fixed it within the frontend code.
    The bug was that the backend treated the entire request body as the JSON to visualize, so if I sent additional parameters (like configuration options), they were included as part of the JSON tree instead of being handled separately. To work around this on the frontend, I made sure to only send the pure JSON data in the request body, without any extra properties, so the backend would process the data correctly.
 
----
+### Can't Unsee
 
-## Submission Instructions
-
-1. **Fork this repository**: Fork this repository to your own GitHub account.
-2. **Clone the forked repository**: Clone the repository to your local machine and set up the project following the instructions in the README.
-3. **Complete the technical tasks**: Implement the features listed above and answer the questions.
-4. **Push the changes**: Push your changes back to your forked repository.
-5. **Submit your repository link**: Once you have completed the tasks, submit the link to your GitHub repository with your answers to the questions.
-
-**Expected time to complete the project: 4 hours.**
-
-Good luck and have fun!
+Video Url: https://drive.google.com/file/d/1a-LVaIEtnN9RSyjN4rWDXEuRq-HcOPtp/view?usp=sharing
