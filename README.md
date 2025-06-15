@@ -205,21 +205,27 @@ As part of this technical test for a Frontend Developer position, you are expect
 
 1. **How did you approach the development of the frontend visualization?**  
    Describe how you managed the complexity of rendering dynamic JSON data and ensuring the user interface is clear and efficient. What libraries or techniques did you use to make this process scalable?
+   Started looking at the backend function, once I had an idea of how it worked created the types. The next step was to configure react flow. Added shadcn for the tooltip, and used react-flow library (@xyflow/react).
 
 2. **What challenges did you face during the development process, and how did you overcome them?**  
    Discuss any obstacles you encountered while working with React, React Flow, Tailwind CSS, or the API integration, and explain how you solved them.
+   The main challenge was learning the @xyflow/react library, especially configuring custom nodes and managing state updates efficiently. I overcame this by studying the documentation, exploring examples, and experimenting with different configurations until I achieved the desired behavior.
 
 3. **How did you ensure that your solution can scale with larger datasets?**  
    What steps did you take to ensure the application remains performant and manageable as the size of the JSON data grows? Did you consider optimizations such as lazy loading, memoization, or virtualized rendering?
+   The node processing function is O(n), ensuring each node and edge is handled only once. I enabled React Flow’s onlyRenderVisibleElements to render only what’s visible in the viewport, which improves performance with large datasets.
 
 4. **What strategies did you implement to enhance interactivity and the user experience?**  
    How did you make the visualization interactive, and what user interface patterns or features did you use to improve the overall user experience?
+   I implemented tooltips using shadcn to provide additional context on hover. I also added a collapsible feature for nodes, allowing users to expand or collapse sections of the graph, which keeps the interface clean and manageable.
 
 5. **How would you improve the app’s scalability and performance for future updates or features?**  
    If this project were to evolve or handle even larger and more complex datasets, how would you approach enhancing its scalability and performance?
+   To further improve scalability, I would implement backend pagination to load JSON data in chunks. Nodes could be collapsed by default, and expanding a node would trigger a request for its children. Additionally, I would set a default expansion level to limit the initial data rendered, improving load times and responsiveness.
 
 6. **How did you identify and resolve the hidden bug in the API on the frontend side?**  
    Describe the process you used to identify the bug, how it impacted the data visualization, and how you fixed it within the frontend code.
+   The bug was that the backend treated the entire request body as the JSON to visualize, so if I sent additional parameters (like configuration options), they were included as part of the JSON tree instead of being handled separately. To work around this on the frontend, I made sure to only send the pure JSON data in the request body, without any extra properties, so the backend would process the data correctly.
 
 ---
 
